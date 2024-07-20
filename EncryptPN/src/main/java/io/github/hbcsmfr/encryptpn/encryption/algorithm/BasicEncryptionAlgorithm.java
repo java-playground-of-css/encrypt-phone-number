@@ -57,13 +57,16 @@ public class BasicEncryptionAlgorithm extends AEncryptionAlgorithm {
     }
     
     private void encrypt() {
-        String phoneNumber = this.phoneNumber.getInputPN();
+        this.readNumberPhone();
+        String phoneNumber = this.phoneNumberData.get(ConstantsEPN.PHONE_NUMBER_KEY);
         String[] inputPN = phoneNumber.split(
             String.format("\\%s", ConstantsEPN.PHONE_NUMBER_SEPARATOR)
         );
         
         // Ajouter l'identifiant de l'algorithme dans la clé.
         this.key.append(EAlgorithm.BASIC.getIdentifier());
+        this.key.append(OTHER_KEY_SEPARATOR);
+        this.key.append(this.phoneNumberData.get(ConstantsEPN.PHONE_PREFIX_KEY));
         this.key.append(FIRST_KEY_SEPARATOR);
         
         if(inputPN.length == 0) {

@@ -11,7 +11,11 @@
 
 ### Format des numéros de téléphone
 
-Format valide : NN.NN.NN.NN.NN (avec N des chiffres entre 0 et 9 inclus).
+Format valide : FR-NN.NN.NN.NN.NN
+
+Avec :
+- FR le préfixe utilisé pour générer un numéro pouvant être appeler.
+- N des chiffres entre 0 et 9 inclus.
 
 ## Releases
 
